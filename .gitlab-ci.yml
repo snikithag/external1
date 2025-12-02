@@ -1,0 +1,18 @@
+stages:
+  -validate
+  -build
+stage:
+  name: validate
+  script:
+    -echo "Validating html pages"
+    -dir home.html
+    -dir about.html
+    -more +1 home.html
+    -more +1 about.html
+stage:
+  name: build
+  script:
+    -echo "Building docker image"
+    -docker build -t snikithagovindu/mywebapp:local .
+
+    
