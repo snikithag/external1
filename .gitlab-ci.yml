@@ -1,18 +1,16 @@
 stages:
-  -validate
-  -build
-stage:
-  name: validate
+  - validate
+  - build
+validate:
+  stage: validate 
   script:
-    -echo "Validating html pages"
-    -dir home.html
-    -dir about.html
-    -more +1 home.html
-    -more +1 about.html
-stage:
-  name: build
+    - echo "Validating html pages"
+    - dir home.html
+    - dir about.html
+    - more +1 home.html
+    - more +1 about.html
+build:
+  stage: build
   script:
-    -echo "Building docker image"
-    -docker build -t snikithagovindu/mywebapp:local .
-
-    
+    - echo "Building docker image"
+    - docker build -t snikithagovindu/mywebapp:local .
