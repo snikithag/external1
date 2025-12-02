@@ -1,19 +1,19 @@
-apiVersion:appv1.0
-kind:Deployment
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name:mywebapp-deployment
+  name: mywebapp-deployment
 spec:
-  replicas:2
+  replicas: 2
   selector:
     matchLabels:
-      app:mywebapp
+      app: mywebapp
   template:
     metadata:
       labels:
-        app:mywebapp
+        app: mywebapp
     spec:
       containers:
-      - name:mywebapp-container
-        image:snikithagovindu/mywebapp:local
+      - name: mywebapp-container
+        image: snikithagovindu/mywebapp:local
         ports:
-        - containerPort:80
+        - containerPort: 80
